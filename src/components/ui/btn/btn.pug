@@ -1,0 +1,7 @@
+mixin btn(button=true)
+  if button
+    button.b_btn&attributes(attributes)
+      block
+  else
+    a(href="#").b_btn&attributes(attributes)
+      block

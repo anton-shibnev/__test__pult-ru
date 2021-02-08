@@ -1,0 +1,62 @@
+$font-family = $font-primary;
+$font-size = 18px;
+$font-weight = 400;
+$line-height = 1.2;
+$color = $dark;
+
+html {
+  color: $color;
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0
+}
+
+/*
+/ Placeholder Selectors
+*/
+
+$h1 {
+  font(
+    {'mob': 24px, 'xs': 32px, 'lg': 48px},
+    {'mob': 1},
+    {'mob': bold, 'xs': 800}
+  );
+}
+
+$h2 {
+  font(
+    {'mob': 24px, 'lg': 32px},
+    {'mob': 1},
+    {'mob': bold, 'lg': 700}
+  );
+}
+
+$link {
+  font(
+    {'mob': 18px},
+    {'mob': 24px},
+    {'mob': normal}
+  );
+}
+
+$desc {
+  font(
+    {'mob': 16px, 'lg': 20px},
+    {'mob': 24px, 'lg': 30px},
+    {'mob': normal, 'lg': 400}
+  );
+}
+
+$btn-label {
+  font(
+    {'mob': 18px},
+    {'mob': 23px},
+    {'mob': normal}
+  );
+  text-transform: uppercase;
+}

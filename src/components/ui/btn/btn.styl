@@ -1,0 +1,15 @@
+.btn {
+  @extend $btn-reset;
+  @extend $btn-label;
+
+  background-color: rgba($primary, 1);
+  color: $white;
+  _padding: {'mob': 10px 16px, 'lg': 18px 16px};
+  transition: background-color $trs;
+
+  &--light {
+    background-color: rgba($primary, 0);
+    color: $primary;
+    border: 1px solid @color;
+  }
+}

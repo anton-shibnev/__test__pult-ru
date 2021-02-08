@@ -1,0 +1,31 @@
+_($property, $value, $isRem = false) {
+  setToRem($props) {
+    if ($isRem) {
+      return rem($props)
+    } else {
+      return $props
+    }
+  }
+
+  setInit($props) {
+    if ($property is a 'function') {
+      $property(setToRem($props))
+    } else {
+      {unquote($property)}: setToRem($props)
+    }
+  }
+
+  if ($value is a 'object') {
+    for $key, $args in $value {
+      if ($key == 'mob') {
+        setInit($args)
+      } else {
+        +mq($key) {
+          setInit($args)
+        }
+      }
+    }
+  } else {
+    {unquote($property)}: setToRem($value)
+  }
+}

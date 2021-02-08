@@ -1,0 +1,9 @@
+rem($size) {
+  $result = unit($size, 'rem') / unit($font-size, 'rem') * 1rem;
+
+  if ($size is a 'unit' && unit($size) == 'px' && $size > 0) {
+    return round($result, 5)
+  } else {
+    return $size
+  }
+}

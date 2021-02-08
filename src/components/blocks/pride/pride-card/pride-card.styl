@@ -1,0 +1,23 @@
+.pride-card {
+  display: block;
+
+  &__pic {
+    _height: {'mob': 360px, 'lg': 540px};
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__title {
+    @extend $h2;
+
+    color: $primary;
+    _margin-top: {'mob': 10px, 'md': 19px};
+  }
+
+  &__desc {
+    @extend $desc;
+
+    _margin-top: {'mob': 10px, 'md': 19px};
+  }
+}

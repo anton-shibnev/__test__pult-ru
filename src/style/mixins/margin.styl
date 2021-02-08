@@ -1,0 +1,33 @@
+margin-x($left = auto, $right = $left) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+margin-y($top, $bottom = $top) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+margin-x-mq($obj) {
+  _(margin-x, $obj, true)
+}
+
+margin-y-mq($obj) {
+  _(margin-y, $obj, true)
+}
+
+_margin-left($props) {
+  _(margin-left, $props, true)
+}
+
+_margin-right($props) {
+  _(margin-right, $props, true)
+}
+
+_margin-top($props) {
+  _(margin-top, $props, true)
+}
+
+_margin-bottom($props) {
+  _(margin-bottom, $props, true)
+}

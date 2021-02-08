@@ -1,0 +1,28 @@
+mixin pride()
+  include _data
+  include pride-card/pride-card
+  include ../../ui/btn/btn
+
+  section.b_pride
+    .container
+      .__inner
+        .__top
+          .__title #{ data.title }
+          a.__link(href=data.link.href )
+            | #{ data.link.text }
+            .__link-icon
+              img(inline src='src/assets/svg/arrow-right.svg')
+
+        #slider.swiper-container.__slider
+          .swiper-wrapper
+            each card in data.cardList
+              .swiper-slide
+                +pride-card(card.src, card.title, card.desc)
+          .swiper-pagination.__pagination
+          .swiper-button-prev.__prev
+          .swiper-button-next.__next
+        .__btn-group
+          .__btn
+            +btn(class='btn--light') Заказать выезд специалиста
+          .__btn
+            +btn() Заказать проектирование

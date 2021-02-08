@@ -1,0 +1,110 @@
+.pride {
+  position: relative;
+
+  &__top {
+    +mq('xs') {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @extend $h1;
+
+    color: $primary;
+  }
+
+  &__link {
+    @extend $link;
+
+    text-transform: uppercase;
+    color: $primary;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    _margin-top: {'mob': 12px, 'md': 0, 'lg': 24px};
+  }
+
+  &__link-icon {
+    _margin-left: {'mob': 12px, 'md': 12px};
+    transition: transform $trs;
+  }
+
+  &__slider {
+    _margin-top: {'mob': 20px, 'md': 40px};
+
+    +mq('md') {
+      margin-x(-40px)
+      padding-x(40px)
+      width: calc(100% + (40px * 2));
+    }
+
+    +mq('lg') {
+      margin-x(-80px)
+      padding-x(80px)
+      width: calc(100% + (80px * 2));
+    }
+  }
+
+  &__prev, &__next {
+    _(display, {'mob': none, 'md': flex });
+
+    color: $primary;
+    _(top, {'md': 31.5%, 'lg': 33%});
+
+    &::after {
+      font({'md': 22px, 'lg': 26px});
+    }
+  }
+
+  &__prev {
+
+    +mq('lg') {
+      left: 20px;
+    }
+  }
+
+  &__next {
+    +mq('lg') {
+      right: 20px;
+    }
+  }
+
+  &__pagination {
+    position: static;
+    margin-top: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      wh(12px);
+
+      background-color: $light-grey;
+      opacity: 1;
+
+      &-active {
+        background-color: $primary;
+      }
+    }
+  }
+
+  &__btn-group {
+    display: grid;
+    _margin-top: {'mob': 16px, 'lg': 11px};
+    _(grid-gap, {'mob': 20px, 'md': 40px});
+    _(grid-auto-flow, {'md': column})
+    _(justify-content, {'md': center});
+    _(grid-auto-columns, {'md': 300px, 'lg': 360px});
+  }
+
+  &__btn {
+    width: 100%;
+
+    .btn {
+      width: @width;
+    }
+  }
+}
